@@ -1,0 +1,17 @@
+desc "sending mail"
+task :sendemail do
+  puts "sending..."
+  sleep 3
+  puts "Done!"
+end
+
+
+namespace :db do
+  desc "Data base"
+    task :migrate do
+      puts "整理資料庫..."
+    end
+end
+
+
+
