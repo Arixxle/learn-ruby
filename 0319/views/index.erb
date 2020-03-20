@@ -2,3 +2,11 @@
 <h2> <%= Time.now %> </h2>
 
 <p> 下一期樂透號碼 = <%= re %> </p>
+
+<h3>你好 <%= session[:hi9527] %> </h3>
+<form action="login" method="post">
+  <input type="text" name="username">
+  <input type="password" name="password">
+  <input type="submit" value="送出">
+</form>
+<a href="logout" method="get">登出</a>
