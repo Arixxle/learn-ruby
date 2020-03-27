@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="/style.css" type="text/css" /> 
+<div class="input-group">
+<p>ATM</p>
+<div class="moniter">
+  <p>餘額：</p>
+  <p> <%= session[:account]%> </p>
+  <p> <%= session[:info]%> </p>
+</div>
+<form action="cal" method="post">
+  <select name="option" id="">
+    <option value="plus" name="plus">存錢 + </option>
+    <option value="minus" name="minus">領錢 - </option>
+  </select>
+  <input class="txt" type="text" name="money">
+  <input class="submit" type="submit">
+</form>
+</div>

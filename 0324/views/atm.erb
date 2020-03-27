@@ -1,0 +1,9 @@
+<h1>餘額：<%= session[:account]%></h1>
+<form action="cal" method="post">
+  <select name="option" id="">
+    <option value="plus">+</option>
+    <option value="minus">-</option>
+  </select>
+  <input type="text" name="money">
+  <input type="submit">
+</form>

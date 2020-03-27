@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- <% n = 0 %>
+<% 8.times do%>
+<div><%= head[0] %>
+  <% 1.times do %>
+    <% a = data[n] %>
+    <%= a[0] %>   
+  <%end %> 
+</div>
+<% end %> -->
+
+
+<% data.each do |list| %>
+  <table class="table-auto border-solid border-3 border-gray-600 mx-10 my-10">
+    <tr class="">
+      <% head.each do |title|  %>
+      <td class="px-4 py-2 border-solid border-2 border-gray-600 bg-teal-100"><p class="font-medium"><%= title  %></p></td>
+      <% end %>
+    </tr>
+    <tr>
+      <% list.each do |item| %>
+      <td class="px-4 py-2 border-solid border-2 border-gray-600"><p class="text-gray-600"><%= item %></p></td>  
+      <% end %>
+    </tr> 
+  </table>
+
+<% end %>
+
+
+
+
+
+
+
+
+</body>
+</html>

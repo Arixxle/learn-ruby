@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "/Users/arixxle/Desktop/learn-web"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "/Users/arixxle/Desktop/learn-rails"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "learn-web"
+	}
+}
