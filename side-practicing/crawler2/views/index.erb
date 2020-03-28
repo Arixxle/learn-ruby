@@ -1,0 +1,23 @@
+<h1>口罩販售地址查詢</h1>
+<form action="search" method="GET">
+  <select name="region" id="">
+    <!-- <option value="臺北">台北</option>
+    <option value="新北">新北</option> -->
+    <option value="臺中">台中</option>
+    <option value="臺東">台東</option>
+  </select>
+  <input type="submit" value="查詢">
+</form>
+
+
+<h1>口罩數量查詢</h1>
+<div>
+  <form action="/cal">
+    <select name="area" id="">
+      <% alist.each do |area| %>
+        <option value="<%= area  %>"><%= area  %></option>
+      <% end %>
+      <input type="submit" name="" id="">
+    </select>
+  </form>
+</div>

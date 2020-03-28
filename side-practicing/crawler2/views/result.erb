@@ -1,0 +1,19 @@
+<a href="/">回首頁</a>
+<table>
+  <thead>
+    <th>醫事機構</th>
+    <th>地址</th>
+    <th>電話</th>
+    <th>成人口罩剩餘</th>
+    <th>兒童口罩剩餘</th>
+  </thead>
+  <% data.each do |r| %>
+    <tr>
+      <td><%= r[0] %></td>
+      <td><%= r[1] %></td>
+      <td><%= r[2] %></td>
+      <td><%= r[3] %></td>
+      <td><%= r[4] %></td>
+    </tr>
+  <% end %>
+</table>

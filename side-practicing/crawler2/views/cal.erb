@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <p class="text-center my-10">成人口罩剩餘總數：<%= ad %></p>
+        <p class="text-center my-10">兒童口罩剩餘總數：<%= ch %></p>
+      </div>
+      <div class="col-12 col-md-6">
+        <div style="width:400px;">
+          <canvas id="heyChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <p class="text-center">全台成人口罩剩餘總數：<%= ttad %></p>
+        <p class="text-center">成人口罩剩餘佔比：<%= calad %>％</p>
+        <div style="width:400px;">
+          <canvas id="heyPie"></canvas>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <p class="text-center">全台兒童口罩剩餘總數：<%= ttch %></p>
+        <p class="text-center">兒童口罩剩餘佔比：<%= calch %>％</p>
+        <div style="width:400px;">
+          <canvas id="heyPie2"></canvas>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  
+
+  <!-- <div><%= alist %></div> -->
+
+
+
+
+
+  <script>
+    var ctx = document.getElementById("heyChart");
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ["成人口罩", "兒童口罩",],
+        datasets: [{
+          label: '口罩剩餘數',
+          data: [<%= ad %>, <%= ch %>],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255,99,132,1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero:true,
+            }
+          }]
+        }
+      }
+    });
+  </script>
+  <script>
+    var ctx = document.getElementById("heyPie");
+    var myChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ["成人口罩剩餘", "全台成人口罩總數",],
+        datasets: [{
+          label: '成人口罩剩餘',
+          data: [<%= ad %>, <%= ttad %>],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255,99,132,1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero:true,
+            }
+          }]
+        }
+      }
+    });
+  </script>
+  <script>
+    var ctx = document.getElementById("heyPie2");
+    var myChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ["兒童口罩剩餘", "全台兒童口罩總數",],
+        datasets: [{
+          label: '兒童口罩剩餘',
+          data: [<%= ch %>, <%= ttch %>],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255,99,132,1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero:true,
+            }
+          }]
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
