@@ -1,4 +1,3 @@
-require 'nokogiri'
 require 'open-uri'
 require 'sinatra'
 require 'sinatra/reloader' if development?

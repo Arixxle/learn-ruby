@@ -32,8 +32,6 @@ get '/search' do
         t.push(r["成人口罩剩餘數"])
         t.push(r["兒童口罩剩餘數"])
         result.push(t)
-        # result.push(r["醫事機構地址"])
-        # result << r["醫事機構地址"]
       end       
     end
   erb :result, locals: {data: result}
@@ -42,16 +40,15 @@ end
 get '/cal' do
   data = File.read('2150b333756e64325bdbc4a5fd45fad1_export.json')
   rawdata = JSON.parse(data)
-  arae_list = []
   adult, child, d, cal_ad, cal_ch = 0, 0, 0, 0, 0
   area = params[:area]
   totalad, totalch = 0, 0
 
-  rawdata.each do |t|
-    totalad += t["成人口罩剩餘數"].to_i
-    totalch += t["兒童口罩剩餘數"].to_i
-  end
-
+    rawdata.each do |t|
+      totalad += t["成人口罩剩餘數"].to_i
+      totalch += t["兒童口罩剩餘數"].to_i
+    end
+    
     rawdata.each do |r|
       if r["醫事機構地址"].include?(area)
         adult += r["成人口罩剩餘數"].to_i
@@ -61,5 +58,5 @@ get '/cal' do
       end
     end
 
-  erb :cal, locals: {ad: adult, ch: child, calad: cal_ad, calch: cal_ch, alist: arae_list, ttad: totalad, ttch: totalch}
+  erb :cal, locals: {ad: adult, ch: child, calad: cal_ad, calch: cal_ch, ttad: totalad, ttch: totalch, area: area}
 end

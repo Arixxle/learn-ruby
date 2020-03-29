@@ -1,23 +1,68 @@
-<h1>口罩販售地址查詢</h1>
-<form action="search" method="GET">
-  <select name="region" id="">
-    <!-- <option value="臺北">台北</option>
-    <option value="新北">新北</option> -->
-    <option value="臺中">台中</option>
-    <option value="臺東">台東</option>
-  </select>
-  <input type="submit" value="查詢">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <style>
+    input{
+      width: 100%;
+      background-color: #fff;
+      border: 1px solid #bdd;
+      /* margin: 20px; */
+      padding: 5px 20px;
+      border-radius: 5px;
+    }
+    input:hover{
+      background-color: #bdd;
+      color: #fff;
+    }
+    .container{
+      max-width: 600px;
+      margin-top: 50px;
+    }
 
+  </style>
+</head>
+<body>
 
-<h1>口罩數量查詢</h1>
-<div>
-  <form action="/cal">
-    <select name="area" id="">
-      <% alist.each do |area| %>
-        <option value="<%= area  %>"><%= area  %></option>
-      <% end %>
-      <input type="submit" name="" id="">
-    </select>
-  </form>
+<div class="container">
+    <div class="col-12 col-md-6 mx-auto">
+      <h3 class="text-center">口罩販售地址查詢</h3>
+    </div>
+    
+    <div class="col-12 col-md-6 mx-auto">
+      <form action="search" method="GET">
+        <select name="region" class="custom-select">
+            <% alist.each do |area| %>
+              <option value="<%= area  %>"><%= area  %></option>
+            <% end %>
+          <input type="submit" value="查詢">
+        </select>
+      </form>
+    </div>
 </div>
+
+
+<div class="container">
+  <div class="col-12 col-md-6 mx-auto">
+    <h3 class="text-center">口罩數量查詢</h3>
+  </div>
+  
+  <div class="col-12 col-md-6 mx-auto">
+    <form action="/cal">
+      <select name="area" class="custom-select">
+        <% alist.each do |area| %>
+          <option value="<%= area  %>"><%= area  %></option>
+        <% end %>
+        <input type="submit" value="查詢">
+      </select>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
+
+
